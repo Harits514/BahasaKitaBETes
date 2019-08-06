@@ -1,12 +1,15 @@
 # BahasaKitaBETes
 Tes BackEnd from BahasaKita
 
+Pada tes ini digunakan GoLang dan MySQL
+
 Petunjuk Pemakaian:
 1. Download GoLang https://golang.org/dl/
 2. Ikuti petunjuk instalasi di : https://golang.org/doc/install
-3. Buka terminal/cmd pada folder yang memuat main.go
-4. Untuk menjalankan, input: go run main.go
-5. Buka postman
+3. Import musik.sql pada phpmyadmin untuk mendapatkan data dan struktur tabel
+4. Buka terminal/cmd pada folder yang memuat main.go
+5. Untuk menjalankan, input: go run main.go
+6. Buka postman
 
 Untuk GET, POST dan PATCH dilakukan menggunakan link http://localhost:8080/ , bedakan method pada postman tergantung yang ingin digunakan.
 
