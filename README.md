@@ -10,7 +10,7 @@ Petunjuk Pemakaian:
 
 Untuk GET, POST dan PATCH dilakukan menggunakan link http://localhost:8080/ , bedakan method pada postman tergantung yang ingin digunakan.
 
-Input menggunakan JSON, durasi lagu dalam detik.
+Input menggunakan JSON, durasi lagu dalam detik, untuk PATCH diperlukan id dari instance yang ingin di-update.
 
 Contoh input POST:
 ![alt text](https://github.com/Harits514/BahasaKitaBETes/blob/master/HowToUseImage/HowToPOST.JPG)
