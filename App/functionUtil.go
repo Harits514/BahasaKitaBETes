@@ -63,5 +63,30 @@ func UpdateData(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoadData(w http.ResponseWriter, r *http.Request) {
-
+	db := dbConn()
+	selDB, err := db.Query("SELECT * FROM musik order by id")
+	if err != nil {
+		log.Println(err)
+		http.Error(w, "data retrieval failed", http.StatusInternalServerError)
+		return
+	}
+	emp := model.Music{}
+	res := []model.Music{}
+	for selDB.Next() {
+		var id, durasi int
+		var namalagu, namaartis, link string
+		err = selDB.Scan(&namalagu, &namaartis, &link, &durasi, &id)
+		if err != nil {
+			panic(err.Error())
+		}
+		emp.ID = id
+		emp.NamaLagu = namalagu
+		emp.NamaArtis = namaartis
+		emp.Link = link
+		emp.Durasi = durasi
+		res = append(res, emp)
+		log.Println(res)
+	}
+	usersJSON, err := json.Marshal(res)
+	w.Write(usersJSON)
 }
