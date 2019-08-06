@@ -14,7 +14,7 @@ var Router RouterStat
 
 func init() {
 	Router.Route = mux.NewRouter()
-	Router.Route.HandleFunc("/insertData", InsertData)
-	Router.Route.HandleFunc("/loadData", LoadData)
-	Router.Route.HandleFunc("/patchData", UpdateData)
+	Router.Route.HandleFunc("/", InsertData).Methods("POST")
+	Router.Route.HandleFunc("/", LoadData).Methods("GET")
+	Router.Route.HandleFunc("/", UpdateData).Methods("PATCH")
 }
