@@ -1,0 +1,26 @@
+func mergesort(arr, leftlimit, rightlimit): //fungsi mergesort
+    if leftlimit<rightlimit //selama batas kiri kurang dari batas kanan
+
+        middlepoint=leftlimit+(rightlimit-leftlimit)/2 //deklarasi titik tengah
+        mergesort(arr, leftlimit, middlepoint)
+        mergesort(arr, middlepoint+1, rightlimit) //rekursif fungsi mergesort
+
+        merge(arr, leftlimit, middlepoint, rightlimit)//penggabungan array
+
+func merge(arr, leftlimit, middlepoint, rightlimit):
+    l = copy of arr[leftlimit:middlepoint]
+    r = copy of arr[middlepoint:rightlimit]
+    leftlength  = length of l
+    rightlength = length of r
+    k = leftlimit
+
+    while (i=0)<leftlength && (j=0)<rightlength:
+        if l[i] <= r[j] : arr[k] = l[i], k++, i++
+        if l[i] > r[j] : arr[k] = r[j], k++, j++
+
+    for i<leftlength:
+        arr[k] = l[i], k++, i++
+    for j<rightlength:
+        arr[k] = r[j], k++, j++
+
+
